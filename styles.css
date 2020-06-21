@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(190, 190, 190);
+  border-radius: 10px;
+}
+
+.wrapper {
+  resize: horizontal;
+  border: 1px solid grey;
+  border-radius: 10px;
+  height: 90vh;
+  width: 95vw;
+  max-width: 95vw;
+  min-width: 310px;
+  margin: 2vh auto;
+  overflow: auto;
+}
+
+.boxes {
+  width: 60%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 150px;
+  margin: 20px;
+  background: white;
+  box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  position: relative;
+}
+
+.box::before {
+  content: 0;
+  top: 50%;
+  height: 3px;
+  width: 100vh;
+  background-color: rgb(94, 94, 94);
+  z-index: -1;
+}
+
+.box:last-child::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 3px;
+  width: 100vh;
+  background-color: white;
+  z-index: -1;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.right:not(:last-child):before {
+  content: "";
+  position: absolute;
+  right: 0;
+}
+
+.left:not(:last-child):before {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.left:last-child:before {
+  content: "";
+  left: 100%;
+}
+
+.right:last-child:before {
+  content: "";
+  right: 100%;
+}
+
+.withLine:after {
+  content: "";
+  position: absolute;
+  top: -90px;
+  height: 90px;
+  width: 100%;
+  z-index: -1;
+  background-color: white;
+}
+
+.withLine.left:after {
+  content: "";
+  border-right: 3px solid rgb(94, 94, 94);
+  right: 50%;
+}
+
+.withLine.right:after {
+  content: "";
+  border-left: 3px solid rgb(94, 94, 94);
+  left: 50%;
+}
+
+.single {
+  float: left;
+}
+
+.single:not(:first-child)::after {
+  content: "";
+  position: absolute;
+  top: -90px;
+  left: 50%;
+  height: 90px;
+  width: 3px;
+  z-index: -1;
+  background-color: rgb(94, 94, 94);
+}
