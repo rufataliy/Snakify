@@ -48,5 +48,5 @@ function snakify() {
 window.onload = snakify;
 window.onresize = snakify;
 
-var ro = new ResizeObserver((entry) => snakify());
+var ro = new ResizeObserver(() => snakify());
 ro.observe(document.querySelector(".wrapper"));

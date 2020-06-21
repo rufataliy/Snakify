@@ -14,19 +14,35 @@
 }
 
 .wrapper {
+  position: relative;
   resize: horizontal;
   border: 1px solid grey;
   border-radius: 10px;
   height: 90vh;
   width: 95vw;
   max-width: 95vw;
-  min-width: 310px;
+  min-width: 200px;
   margin: 2vh auto;
+  overflow: hidden;
+}
+
+.innerWrapper {
+  height: 100%;
   overflow: auto;
 }
 
+.arrows {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 2px;
+  font-size: 30px;
+  color: grey;
+  z-index: 1;
+}
+
 .boxes {
-  width: 60%;
+  width: 90%;
   overflow: hidden;
   margin: 0 auto;
 }
